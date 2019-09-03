@@ -35,7 +35,6 @@ namespace IComparable_01
     public class Item : IComparable
     {
         public string Name;
-
         public int CompareTo(object o)
         {
             Item that = o as Item;
@@ -60,10 +59,36 @@ namespace IComparable_01
             return (string.Compare(this.name, b));
         }
     }
+    class Pet : Animals
+    {
+
+    }
+    class Spartan : Animals
+    {
+
+    }
+    class Buildings : Age
+    {
+        public int ICompareByAge() //ICompare by Age has to 
+        {
+            return 0;
+        }
+    }
+    class Animals : Age
+    {
+        public int ICompareByAge() //ICompare by Age has to 
+        {
+            return 0;
+        }
+    }
+    interface Age
+    {
+        int ICompareByAge();
+    }
     interface ICompareByName
     {
         int CompareByName(string b);
-    }
+    }//Used by classes that are not related by inheritance
     interface ICompareByLength
     {
         int CompareByLength(string b);
